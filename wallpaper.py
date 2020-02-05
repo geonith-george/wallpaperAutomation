@@ -34,10 +34,11 @@ def splashbase():
 def picsum():
     nm = random.randint(1,1200)
     url =  'https://i.picsum.photos/id/{0}/1920/1080.jpg'.format(nm)
+    print(url)
     downloader(url)
     change_wallpaper()
 
-v = int(input('1. splashbase\n2. picsum\n'))
+v = int(input('1. splashbase\n2. picsum (recommended)\n'))
 if v == 1:
     splashbase()
 elif v == 2:
