@@ -4,10 +4,8 @@ import os
 import requests
 import json
 
-nm = random.randint(1,7000)
-pth = os.getcwd()
-# url =  'https://i.picsum.photos/id/{0}/1920/1080.jpg'.format(number)
 
+pth = os.getcwd()
 def getLink(n):
     r = requests.get(f'http://www.splashbase.co/api/v1/images/{n}')
     try:
@@ -28,5 +26,21 @@ def change_wallpaper():
     os.system("RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters")
     # os.system("del .\image.jpg")
 
-getLink(nm)
-change_wallpaper()
+def splashbase():
+    nm = random.randint(1,7000)
+    getLink(nm)
+    change_wallpaper()
+
+def picsum():
+    nm = random.randint(1,1200)
+    url =  'https://i.picsum.photos/id/{0}/1920/1080.jpg'.format(nm)
+    downloader(url)
+    change_wallpaper()
+
+v = int(input('1. splashbase\n2. picsum\n'))
+if v == 1:
+    splashbase()
+elif v == 2:
+    picsum()
+else:
+    print("try again2")
