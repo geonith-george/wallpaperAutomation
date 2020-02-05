@@ -38,10 +38,19 @@ def picsum():
     downloader(url)
     change_wallpaper()
 
-v = int(input('1. splashbase\n2. picsum (recommended)\n'))
-if v == 1:
-    splashbase()
-elif v == 2:
-    picsum()
-else:
-    print("try again2")
+def run():
+    v = int(input('1. splashbase\n2. picsum (recommended)\n'))
+    os.system("cls")
+    if v == 1:
+        splashbase()
+    elif v == 2:
+        picsum()
+    else:
+        print("try again2")
+
+while(True):
+    run()
+    v = input("1. Press enter to continue\n2. q to quit")
+    os.system("cls")
+    if v == 'q':
+        break
